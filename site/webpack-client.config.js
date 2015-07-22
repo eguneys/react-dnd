@@ -9,10 +9,14 @@ module.exports = {
 
   devtool: isDev ? 'cheap-eval-source-map' : 'source-map',
 
+  devServer: {
+    host: '0.0.0.0'
+  },
+
   entry: [
     path.join(__dirname, 'client.js')
   ].concat(isDev ? [
-    'webpack-dev-server/client?http://localhost:8080',
+    'webpack-dev-server/client?http://192.168.56.103:8080',
     'webpack/hot/only-dev-server'
   ] : []),
 

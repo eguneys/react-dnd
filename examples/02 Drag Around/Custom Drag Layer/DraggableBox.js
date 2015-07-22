@@ -5,6 +5,8 @@ import Box from './Box';
 import { DragSource } from 'react-dnd';
 import { getEmptyImage } from 'react-dnd/modules/backends/HTML5';
 
+import './_DraggableBox.less';
+
 const boxSource = {
   beginDrag(props) {
     const { id, title, left, top } = props;
@@ -59,7 +61,7 @@ export default class DraggableBox {
     const { title, connectDragSource } = this.props;
 
     return connectDragSource(
-      <div style={getStyles(this.props)}>
+      <div className='draggable-box' style={getStyles(this.props)}>
         <Box title={title} />
       </div>
     );
